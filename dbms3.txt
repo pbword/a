@@ -1,0 +1,15 @@
+
+db.createCollection("students");
+show collections;
+db.students.insert({"name":"GANESH","age":21});
+db.students.find();
+
+db.students.find({name:"pawan"});
+db.students.find({name:"pawan"}, {name: 1});
+db.students.find({name:"pawan"}, {_id: 0, name: 1});
+db.students.find({age:21}).limit(1);
+db.students.find({age:21}).limit(1).skip(1);
+
+db.students.update({name:"adi"}, {$set: {age: 25});
+db.students.remove({name:"GANESH"});
+db.students.drop();
